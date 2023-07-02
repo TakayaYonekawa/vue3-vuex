@@ -7,7 +7,9 @@ export default createStore({
   getters: {
   },
   mutations: {
-    
+    save(state, newMemo){
+      state.memos.unshift(newMemo)
+    }
   },
   actions: {
   },
