@@ -14,10 +14,10 @@
     name: 'HomeView',
     computed: {
       hasMemos(){
-        return this.$store.state.memos.length
+        return this.$store.getters.getCount
       },
       memos() {
-        return this.$store.state.memos
+        return this.$store.getters.getAll
       }
     }
 
