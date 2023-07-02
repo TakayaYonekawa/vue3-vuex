@@ -1,8 +1,8 @@
 <template>
     <h2>New</h2>
 
-    <div><input type="text"></div>
-    <div><textarea name="" ></textarea></div>
+    <div><input type="text" v-model="title"></div>
+    <div><textarea name="" v-model="content"></textarea></div>
     <div class="center"><button @click="save">保存</button></div>
 
 </template>
@@ -10,14 +10,21 @@
 <script>
 export default {
   name: 'MemoForm',
+  data(){
+    return{
+        title: 'kok',
+        content: 'kok',
+    }
+  },
   methods:{
     save(){
         let memo = {
-            title : 'メモのタイトルです',
-            content: 'メモの内容です'
+            title : this.title,
+            content: this.content
         }
 
         this.$store.commit('save', memo)
+        this.$router.push('/')
     }
   }
 }
